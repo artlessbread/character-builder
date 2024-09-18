@@ -95,7 +95,7 @@ function generateCharacterName(attributes) {
         race: {
             'Human': ['Dependable', 'Ambitious', 'Versatile'],
             'Fey': ['Enigmatic', 'Mystical', 'Sylvan'],
-            'Dwarf': ['Bearded', 'Resolute', 'Digger'],
+            'Dwarf': ['Bearded', 'Resolute', 'Digging'],
             'Halfling': ['Cheerful', 'Lucky', 'Brave'],
         },
         body: {
