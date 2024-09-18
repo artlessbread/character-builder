@@ -125,7 +125,7 @@ function generateCharacterName(attributes) {
         class: {
             'Mage': ['Magus', 'Sorcerer', 'Wizard'],
             'Fighter': ['Gladiator', 'Warrior', 'Knight'],
-            'Ranger': ['Ranger', 'Archer', 'Tracker'],
+            'Ranger': ['Scout', 'Archer', 'Huntress'],
         },
     };
 
