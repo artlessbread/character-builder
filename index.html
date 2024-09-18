@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Character Builder</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .category { margin-bottom: 20px; }
+        .category h3 { margin-bottom: 5px; }
+        .powers { margin-top: 30px; }
+        .power { background: #f4f4f4; padding: 10px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+<h1>Character Builder</h1>
+
+<form id="character-form">
+    <!-- CLASS -->
+    <div class="category">
+        <h3>Class</h3>
+        <label><input type="radio" name="class" value="Mage"> Mage</label><br>
+        <label><input type="radio" name="class" value="Fighter"> Fighter</label><br>
+        <label><input type="radio" name="class" value="Ranger"> Ranger</label>
+    </div>
+
+    <!-- RACE -->
+    <div class="category">
+        <h3>Race</h3>
+        <label><input type="radio" name="race" value="Human"> Human</label><br>
+        <label><input type="radio" name="race" value="Fey"> Fey</label><br>
+        <label><input type="radio" name="race" value="Dwarf"> Dwarf</label><br>
+        <label><input type="radio" name="race" value="Halfling"> Halfling</label>
+    </div>
+
+    <!-- BODY -->
+    <div class="category">
+        <h3>Body</h3>
+        <label><input type="radio" name="body" value="Small"> Small</label><br>
+        <label><input type="radio" name="body" value="Big"> Big</label><br>
+        <label><input type="radio" name="body" value="Nimble"> Nimble</label><br>
+        <label><input type="radio" name="body" value="Stout"> Stout</label>
+    </div>
+
+    <!-- MIND -->
+    <div class="category">
+        <h3>Mind</h3>
+        <label><input type="radio" name="mind" value="Simple-minded"> Simple-minded</label><br>
+        <label><input type="radio" name="mind" value="Streetsmart"> Streetsmart</label><br>
+        <label><input type="radio" name="mind" value="Booksmart"> Booksmart</label><br>
+        <label><input type="radio" name="mind" value="Wise"> Wise</label>
+    </div>
+
+    <!-- BACKGROUND -->
+    <div class="category">
+        <h3>Background</h3>
+        <label><input type="radio" name="background" value="Military"> Military</label><br>
+        <label><input type="radio" name="background" value="Criminal"> Criminal</label><br>
+        <label><input type="radio" name="background" value="Noble"> Noble</label><br>
+        <label><input type="radio" name="background" value="Craftsman"> Craftsman</label>
+    </div>
+
+    <!-- DISPOSITION -->
+    <div class="category">
+        <h3>Disposition</h3>
+        <label><input type="radio" name="disposition" value="Aggressive"> Aggressive</label><br>
+        <label><input type="radio" name="disposition" value="Cautious"> Cautious</label><br>
+        <label><input type="radio" name="disposition" value="Honest"> Honest</label><br>
+        <label><input type="radio" name="disposition" value="Dishonest"> Dishonest</label>
+    </div>
+
+    <button type="button" onclick="generatePowers()">Generate Powers</button>
+</form>
+
+<div class="powers" id="powers-output"></div>
+
+<script src="powers.js"></script>
+<script src="project.js"></script>
+
+</body>
+</html>
