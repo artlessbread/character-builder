@@ -127,7 +127,7 @@ const powers = {
 	
 	"Small+Simple-minded": "#070 - Counterstrike",
 	"Small+Streetsmart": "#089 - Reactive Shield",
-	"Small+Booksmart": "134 - Filibuster",
+	"Small+Booksmart": "#134 - Filibuster",
 	"Small+Wise": "#067 - Endure",
 	"Small+Military": "#087 - Bait and Switch",
 	"Small+Criminal": "#106 - Lost in the Crowd",
@@ -166,7 +166,7 @@ const powers = {
 	
 	"Stout+Simple-minded": "#133 - Slow and Steady",
 	"Stout+Streetsmart": "#089 - Reactive Shield",
-	"Stout+Booksmart": "134 - Filibuster",
+	"Stout+Booksmart": "#134 - Filibuster",
 	"Stout+Wise": "#067 - Endure",
 	"Stout+Military": "#065 - Square Off",
 	"Stout+Criminal": "#101 - Die Hard",
