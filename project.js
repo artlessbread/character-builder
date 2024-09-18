@@ -123,9 +123,9 @@ function generateCharacterName(attributes) {
             'Dishonest': ['Swindling', 'Corrupt', 'Duplicitous'],
         },
         class: {
-            'Mage': ['Magus', 'Sorcerer', 'Wizard'],
-            'Fighter': ['Gladiator', 'Warrior', 'Knight'],
-            'Ranger': ['Scout', 'Archer', 'Huntress'],
+            'Mage': ['Magus', 'Sorcerer', 'Wizard', 'Warlock','Witch', 'Thaumaturgist'],
+            'Fighter': ['Gladiator', 'Warrior', 'Knight', 'Dragoon', 'Raider', 'Grunt'],
+            'Ranger': ['Scout', 'Archer', 'Huntress', 'Falconer','Trapper', 'Sniper'],
         },
     };
 
