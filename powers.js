@@ -63,7 +63,7 @@ const powers = {
 	"Human+Small": "#077 - Fade Away",
 	"Human+Big": "#066 - Protective Rush",
 	"Human+Nimble": "#090 - Shift",
-	"Human+Stout": "#063 - SSecond Wind",
+	"Human+Stout": "#063 - Second Wind",
 	"Human+Simple-minded": "#128 - Intuition",
 	"Human+Streetsmart": "#128 - Intuition",
 	"Human+Booksmart": "#098 - Concentrate",
@@ -140,7 +140,7 @@ const powers = {
 	
 	"Big+Simple-minded": "#133 - Slow and Steady",
 	"Big+Streetsmart": "#103 - Born Leader",
-	"Big+Booksmart": "091 - Wind Blast",
+	"Big+Booksmart": "#091 - Wind Blast",
 	"Big+Wise": "#103 - Born Leader",
 	"Big+Military": "#124 - Command Respect",
 	"Big+Criminal": "#101 - Die Hard",
