@@ -69,10 +69,20 @@
         <label><input type="radio" name="disposition" value="Dishonest"> Dishonest</label>
     </div>
 
-    <button type="button" onclick="generatePowers()">Generate Powers</button>
+     <div class="buttons">
+        <button type="button" onclick="generatePowers()">Generate Powers</button>
+        <button type="button" onclick="viewLog()">View Log</button>
+        <button type="button" onclick="clearLog()">Clear Log</button>
+    </div>
 </form>
 
 <div class="powers" id="powers-output"></div>
+
+<div class="log-container" id="log-container" style="display:none;">
+    <h2>Characters Created</h2>
+    <div id="log-table-container"></div>
+</div>
+
 
 <script src="powers.js"></script>
 <script src="project.js"></script>
