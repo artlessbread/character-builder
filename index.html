@@ -9,6 +9,12 @@
         .category h3 { margin-bottom: 5px; }
         .powers { margin-top: 30px; }
         .power { background: #f4f4f4; padding: 10px; margin-bottom: 10px; }
+        .log-container { margin-top: 30px; }
+        .log-container h2 { margin-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background: #eee; }
+        .buttons { margin-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -69,7 +75,7 @@
         <label><input type="radio" name="disposition" value="Dishonest"> Dishonest</label>
     </div>
 
-     <div class="buttons">
+    <div class="buttons">
         <button type="button" onclick="generatePowers()">Generate Powers</button>
         <button type="button" onclick="viewLog()">View Log</button>
         <button type="button" onclick="clearLog()">Clear Log</button>
@@ -82,7 +88,6 @@
     <h2>Characters Created</h2>
     <div id="log-table-container"></div>
 </div>
-
 
 <script src="powers.js"></script>
 <script src="project.js"></script>
