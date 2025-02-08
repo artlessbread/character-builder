@@ -17,11 +17,14 @@ function generatePowers() {
         }
     }
 
+       // Generate the character name
     const characterName = generateCharacterName(selectedAttributes);
+
+    // Create an array of attributes in reverse order for the header
     const attributeOrder = ['disposition', 'background', 'mind', 'body', 'race', 'class'];
     const attributeList = attributeOrder.map(attr => selectedAttributes[attr]);
 
-    // Generate attribute pairs and powers
+    // Generate attribute pairs and collect powers
     const attributeKeys = Object.keys(selectedAttributes);
     let powersList = [];
 
@@ -30,9 +33,11 @@ function generatePowers() {
             const attr1 = selectedAttributes[attributeKeys[i]];
             const attr2 = selectedAttributes[attributeKeys[j]];
 
+            // Create key combinations in both orders
             const key1 = `${attr1}+${attr2}`;
             const key2 = `${attr2}+${attr1}`;
 
+            // Check if the combination exists in the powers object
             if (powers[key1]) {
                 powersList.push(powers[key1]);
             } else if (powers[key2]) {
@@ -41,24 +46,26 @@ function generatePowers() {
         }
     }
 
+    // Sort powers alphabetically
     powersList.sort();
 
-    // Display output
+    // Display the character name prominently and attributes underneath
     const outputDiv = document.getElementById('powers-output');
-    outputDiv.innerHTML = '';
+    outputDiv.innerHTML = ''; // Clear previous output
 
+    // Create the character name header
     const nameHeader = document.createElement('h2');
     nameHeader.style.fontSize = '2em';
     nameHeader.style.marginBottom = '0.5em';
     nameHeader.textContent = `You are a... ${characterName.toUpperCase()}`;
     outputDiv.appendChild(nameHeader);
 
+    // Display the chosen attributes in smaller text
     const attributesText = document.createElement('p');
     attributesText.style.fontSize = '0.9em';
     attributesText.style.color = '#555';
     attributesText.textContent = `Attributes: ${attributeList.join(', ')}`;
     outputDiv.appendChild(attributesText);
-
     if (powersList.length === 0) {
         const noPowersMsg = document.createElement('p');
         noPowersMsg.textContent = 'No powers found for the selected combination.';
