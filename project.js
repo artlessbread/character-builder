@@ -17,14 +17,76 @@ function generatePowers() {
         }
     }
 
-       // Generate the character name
-    const characterName = generateCharacterName(selectedAttributes);
+// Function to generate a unique character name based on selected attributes
+function generateCharacterName(selectedattributes) {
+    // Attribute-based adjectives
+    const fragments = {
+        race: {
+            'Human': ['Valiant', 'Stalwart', 'Noble'],
+            'Fey': ['Enigmatic', 'Mystic', 'Sylvan'],
+            'Dwarf': ['Sturdy', 'Resolute', 'Iron'],
+            'Halfling': ['Cheerful', 'Nimble', 'Wily'],
+        },
+        body: {
+            'Small': ['Tiny', 'Little', 'Minute'],
+            'Big': ['Massive', 'Gigantic', 'Colossal'],
+            'Nimble': ['Agile', 'Swift', 'Lithe'],
+            'Stout': ['Robust', 'Hale', 'Hearty'],
+        },
+        mind: {
+            'Simple-minded': ['Plain', 'Uncomplicated', 'Straightforward'],
+            'Streetsmart': ['Shrewd', 'Astute', 'Cunning'],
+            'Booksmart': ['Erudite', 'Learned', 'Scholarly'],
+            'Wise': ['Sagacious', 'Enlightened', 'Prudent'],
+        },
+        background: {
+            'Military': ['Disciplined', 'Martial', 'Steadfast'],
+            'Criminal': ['Rogue', 'Devious', 'Shadowy'],
+            'Noble': ['Aristocratic', 'Regal', 'Imperial'],
+            'Craftsman': ['Artisan', 'Skillful', 'Dexterous'],
+        },
+        disposition: {
+            'Aggressive': ['Fierce', 'Bold', 'Intrepid'],
+            'Cautious': ['Wary', 'Prudent', 'Circumspect'],
+            'Honest': ['Truthful', 'Sincere', 'Frank'],
+            'Dishonest': ['Deceptive', 'Sly', 'Duplicitous'],
+        },
+        class: {
+            'Mage': ['Mage', 'Sorcerer', 'Wizard'],
+            'Fighter': ['Fighter', 'Warrior', 'Knight'],
+            'Ranger': ['Ranger', 'Archer', 'Tracker'],
+        },
+    };
 
-    // Create an array of attributes in reverse order for the header
-    const attributeOrder = ['disposition', 'background', 'mind', 'body', 'race', 'class'];
-    const attributeList = attributeOrder.map(attr => selectedAttributes[attr]);
+    // Select one adjective per attribute (other than class)
+    const selectedAdjectives = [];
 
-    // Generate attribute pairs and collect powers
+    ['race', 'body', 'mind', 'background', 'disposition'].forEach(attr => {
+        const options = fragments[attr][selectedattributes[attr]];
+        if (!options) {
+            console.error(`No adjectives found for ${attr}: ${selectedattributes[attr]}`);
+            return;
+        }
+        const randomIndex = Math.floor(Math.random() * options.length);
+        const adjective = options[randomIndex];
+        selectedAdjectives.push(adjective);
+    });
+
+    // Randomly pick two adjectives from the selected ones
+    const shuffledAdjectives = selectedAdjectives.sort(() => 0.5 - Math.random());
+    const nameAdjectives = shuffledAdjectives.slice(0, 2);
+
+    // Get the class title (randomly if multiple options)
+    const classOptions = fragments.class[attributes.class];
+    const randomClassIndex = Math.floor(Math.random() * classOptions.length);
+    const classTitle = classOptions[randomClassIndex];
+
+    // Combine to create the name
+    const characterName = `${nameAdjectives[0]} ${nameAdjectives[1]} ${classTitle}`;
+
+    return characterName;
+
+    // Generate attribute pairs and powers
     const attributeKeys = Object.keys(selectedAttributes);
     let powersList = [];
 
@@ -33,11 +95,9 @@ function generatePowers() {
             const attr1 = selectedAttributes[attributeKeys[i]];
             const attr2 = selectedAttributes[attributeKeys[j]];
 
-            // Create key combinations in both orders
             const key1 = `${attr1}+${attr2}`;
             const key2 = `${attr2}+${attr1}`;
 
-            // Check if the combination exists in the powers object
             if (powers[key1]) {
                 powersList.push(powers[key1]);
             } else if (powers[key2]) {
@@ -46,26 +106,24 @@ function generatePowers() {
         }
     }
 
-    // Sort powers alphabetically
     powersList.sort();
 
-    // Display the character name prominently and attributes underneath
+    // Display output
     const outputDiv = document.getElementById('powers-output');
-    outputDiv.innerHTML = ''; // Clear previous output
+    outputDiv.innerHTML = '';
 
-    // Create the character name header
     const nameHeader = document.createElement('h2');
     nameHeader.style.fontSize = '2em';
     nameHeader.style.marginBottom = '0.5em';
     nameHeader.textContent = `You are a... ${characterName.toUpperCase()}`;
     outputDiv.appendChild(nameHeader);
 
-    // Display the chosen attributes in smaller text
     const attributesText = document.createElement('p');
     attributesText.style.fontSize = '0.9em';
     attributesText.style.color = '#555';
     attributesText.textContent = `Attributes: ${attributeList.join(', ')}`;
     outputDiv.appendChild(attributesText);
+
     if (powersList.length === 0) {
         const noPowersMsg = document.createElement('p');
         noPowersMsg.textContent = 'No powers found for the selected combination.';
