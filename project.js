@@ -102,6 +102,48 @@ function generatePowers() {
 
 // 2. FUNCTION TO GENERATE A RANDOM NAME (2 ADJECTIVES + 1 CLASS TITLE)
 function generateCharacterName(attributes) {
+    const givenNames = [
+        "Bob","Aria","Thorn","Mira","Garrick","Lyra","Bran","Isolde","Rook",
+        "Nyx","Cade","Elowen","Tamsin","Finn","Vera","Oren","Kael","Yara",
+        "Dorian","Maeve","Tarin","Sable","Jora","Perrin","Nell"
+          // --- Silly / Out-there (≈100) ---
+          "Zibble","Quixel","Thrumble","Fizzwick","Glimmerlyn","Bumblefret","Zarfoon","Puddlewick","Kizzle","Moonpickle",
+          "Whimsyra","Snorble","Jinxley","Crickethex","Mistrindle","Pipkin","Twitchwhistle","Zyvra","Quorrax","Sprigganly",
+          "Blunderbuss","Noodlethorn","Razzmatax","Skitterly","Thimbletack","Gossamerix","Zantriel","Wobbletop","Fuzzle","Peonyx",
+          "Vexabee","Kippria","Quenx","Rookadoo","Sprocket","Bixie","Zhoom","Glimm","Mumbleknot","Twizzle",
+          "Poxie","Tinkert","Blix","Kithra","Snicket","Wixie","Gadgette","Zeddrin","Foxtail","Wobblewyn",
+          "Cracklepop","Zephizzi","Tricksyx","Rumple","Puddle","Glimmerjack","Nixx","Fizzra","Sassafrax","Merrywisp",
+          "Quillibub","Bramblebee","Tatterwing","Puffin","Zuzu","Taffeta","Wrenkin","Jingle","Pip","Corkle",
+          "Dazzle","Spindlefay","Quoria","Mothley","Skibble","Froodle","Whizzla","Buzzle","Trundle","Gossipyx",
+          "Quorra","Zephyrloo","Sproutle","Merryfin","Glimmora","Kip","Tatter","Niblet","Pippinella","Fiddlestix",
+          "Sprogg","Twizzlewick","Breezlet","Zilfa","Doodle","Snarf","Whimble","Zapple","Flitterby","Muddlewick",
+        
+          // --- Classic High Fantasy (≈100) ---
+          "Aelric","Eldrin","Caladrel","Seraphine","Thrandor","Elara","Daeven","Rowena","Galen","Lyanna",
+          "Torvald","Ysolde","Marek","Selwyn","Arwen","Eirlys","Beren","Morwen","Kaelen","Luthien",
+          "Ciaran","Elric","Rhiannon","Theron","Alaric","Sigrid","Ariadne","Leofric","Evelune","Osric",
+          "Maelis","Gwyneira","Taliesin","Eamon","Brienne","Corvin","Iskander","Yvaine","Aerin","Tyren",
+          "Eldoria","Caelan","Sorcha","Baldric","Giselle","Fenris","Althea","Doriane","Evander","Melisande",
+          "Tristan","Isen","Leandra","Cassian","Maevaris","Tamsyn","Roderic","Eloweth","Celestria","Gareth",
+          "Nerissa","Hadrian","Lucan","Aram","Selyra","Thalia","Eldric","Maegis","Varyn","Elowis",
+          "Rowan","Alistair","Tavia","Dain","Ysolda","Ragnar","Elda","Galenor","Seren","Coraline",
+          "Faelan","Elys","Kaelith","Orin","Brynja","Cedric","Elspeth","Thera","Torin","Aveline",
+          "Caspian","Marius","Ianthe","Keldor","Ardashir","Nerwen","Caradoc","Isoldea","Ryland","Morrigan",
+        
+          // --- Real World (≈100) ---
+          "Alexander","Sofia","Liam","Emma","Noah","Olivia","Ethan","Ava","Mason","Mia",
+          "Lucas","Amelia","Logan","Harper","James","Evelyn","Benjamin","Abigail","Elijah","Emily",
+          "Oliver","Scarlett","Henry","Grace","Samuel","Lily","Daniel","Chloe","Matthew","Zoey",
+          "Joseph","Nora","Sebastian","Hannah","David","Avery","Andrew","Ella","Nathan","Camila",
+          "Jack","Layla","Owen","Riley","Caleb","Victoria","Ryan","Penelope","Isaac","Luna",
+          "Jonathan","Aubrey","Luke","Stella","Wyatt","Paisley","Gabriel","Savannah","Julian","Brooklyn",
+          "Levi","Addison","Anthony","Eleanor","Dylan","Mila","Lincoln","Hazel","Thomas","Aurora",
+          "Charles","Natalie","Christopher","Lucy","Jaxon","Audrey","Isaiah","Bella","Grayson","Claire",
+          "Adam","Naomi","Christian","Caroline","Hunter","Anna","Evan","Sadie","Connor","Samantha",
+          "Jason","Leah","Aaron","Sarah","Miles","Madeline","Cole","Katherine","Patrick","Julia"
+        ];
+    const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+    
     // Example fragment data (adjectives, class titles, etc.)
     // Feel free to expand or replace with your own data
     const fragments = {
@@ -243,3 +285,4 @@ function getCurrentCESTTimeString() {
     };
     return new Intl.DateTimeFormat('en-GB', options).format(new Date());
 }
+
